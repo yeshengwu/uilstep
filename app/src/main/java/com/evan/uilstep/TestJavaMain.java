@@ -11,6 +11,18 @@ public class TestJavaMain {
             }
         });
         System.out.println("str2IntResult = " + str2IntResult);
+
+        TestKotlinClass testKotlinClass = new TestKotlinClass();
+        testKotlinClass.printSize();
+        testKotlinClass = new TestKotlinClass(10,10,10);
+        testKotlinClass.printSize();
+        testKotlinClass = new TestKotlinClass(29);
+        testKotlinClass.printSize();
+
+//        Aquarium
+
+//        TowerTank towerTank = new TowerTank(1,1);
+//        towerTank.printSize();
     }
 
     private int strJavaMapper(String str, Mapper mapper) {
