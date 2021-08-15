@@ -8,6 +8,8 @@ fun main(){
     // TODO kotlin 多线程
     // TODO kotlin 网络库
     // TODO kotlin 特有的一些语法特性 see ExampleUnitTest.kt
+
+
 }
 
 fun makeFish() {
@@ -59,5 +61,27 @@ fun buildAquarium() {
     myTower.printSize()
 
 }
+
+
+fun maxOf(a:Int,b:Int): Int {
+    if (a > b) {
+        return a
+    } else {
+        return b
+    }
+}
+
+// In Kotlin, if can also be used as an expression.
+fun maxOf2(a:Int,b:Int) = if (a>b) a else b
+
+fun describe(obj: Any): String =
+        when (obj) {
+            1          -> "One"
+            "Hello"    -> "Greeting"
+            is Long    -> "Long"
+            !is String -> "Not a string"
+            else -> "Unknown"
+        }
+
 
 
