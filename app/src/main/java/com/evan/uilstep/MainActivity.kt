@@ -6,6 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.evan.middlechild1.MainTestInChild1
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 //        TestKotlinObject.name
+        val child1 = MainTestInChild1()
+        child1.print()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

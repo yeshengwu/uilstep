@@ -1,2 +1,9 @@
+
+//include ':middleChild2'
+//include ':middleChild1'
+
+include ':middle:middleChild2'
+include ':middle:middleChild1'
+
 include ':app'
 rootProject.name = "uilstep"

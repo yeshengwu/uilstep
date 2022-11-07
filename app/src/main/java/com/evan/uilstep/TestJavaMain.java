@@ -2,6 +2,9 @@ package com.evan.uilstep;
 
 import com.evan.uilstep.jtest.FunctionsA;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestJavaMain {
 
     public static void main(String[] args) {
@@ -20,6 +23,12 @@ public class TestJavaMain {
         testKotlinClass.printSize();
         testKotlinClass = new TestKotlinClass(29);
         testKotlinClass.printSize();
+
+        Map<Integer,Integer> map = new HashMap<>();
+        map.put(100,110);
+
+        System.out.println("getLen="+map.get(testKotlinClass.getLength()));
+
 
 //        Aquarium
 

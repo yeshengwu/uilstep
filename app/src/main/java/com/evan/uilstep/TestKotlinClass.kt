@@ -52,4 +52,9 @@ class TestKotlinClass(var length: Int = 100, var width: Int = 20, var height: In
                     "Height: $height cm "
         )
     }
+
+    fun getInt22(): Int {
+        return 1
+    }
+
 }
