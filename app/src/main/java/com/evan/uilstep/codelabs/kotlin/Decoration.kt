@@ -1,5 +1,8 @@
-package com.evan.uilstep.decor
+package com.evan.uilstep.codelabs.kotlin
 
+/**
+ * 9. Task: Create a data class https://developer.android.com/codelabs/kotlin-bootcamp-classes/#8
+ */
 data class Decoration(val rocks: String, val wood: String, val diver: String) {
 
 

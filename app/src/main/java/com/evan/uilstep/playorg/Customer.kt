@@ -1,4 +1,4 @@
-package com.evan.uilstep
+package com.evan.uilstep.playorg
 
 /**
  * Create DTOs (POJOs/POCOs)﻿

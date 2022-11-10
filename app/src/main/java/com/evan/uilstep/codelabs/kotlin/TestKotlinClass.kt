@@ -1,4 +1,4 @@
-package com.evan.uilstep
+package com.evan.uilstep.codelabs.kotlin
 
 /**
  *  https://developer.android.com/codelabs/kotlin-bootcamp-classes/

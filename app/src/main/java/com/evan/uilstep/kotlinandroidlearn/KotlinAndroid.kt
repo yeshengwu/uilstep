@@ -36,6 +36,14 @@ fun makeTest() {
 //        println("count = "+count)
     println("count = $count")
 
+    stringMapper("Android", { input ->
+        input.length
+    })
+    // 如果匿名函数是在某个函数上定义的最后一个参数，则您可以在用于调用该函数的圆括号之外传递它，如以下示例所示
+    // 这是kt约定，很多kt都是这样写的，注意观察ta的真身，别被约定搞懵逼了。
+    stringMapper("Android") { input ->
+        input.length
+    }
 
     val languageName = "Kotlin"
     val upperCaseName = languageName.toUpperCase()
@@ -90,13 +98,22 @@ fun generateAnswerString(countThreshold: Int): String {
     return answerString;
 }
 // 理解为 java 的回调，比如 点击事件回调就更具体清晰
-fun stringMapper(str: String, mapper: (String) -> Int): Int {
+fun stringMapper(str2: String, mapper: (String) -> Int): Int {
+    println("IN stringMapper param str = $str2, cb func = $mapper")
+    // invoke function
+    // evan 先处理一波 str 参数
+//        return mapper(str.plus("345"))
+    // origin: 仅仅传递str，不处理参数
+    return mapper(str2)
+}
+
+fun stringMapper2(str: String, mapper: () -> Int): Int {
     println("IN stringMapper param str = $str, cb func = $mapper")
     // invoke function
     // evan 先处理一波 str 参数
 //        return mapper(str.plus("345"))
     // origin: 仅仅传递str，不处理参数
-    return mapper(str)
+    return mapper()
 }
 
 fun stringMapperNewParamInLast(str: String, mapper: (String) -> Int, newStr: String): Int {

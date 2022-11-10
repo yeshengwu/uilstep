@@ -1,14 +1,20 @@
-package com.evan.uilstep
+package com.evan.uilstep.codelabs.kotlin
 
-fun main(){
+import com.evan.uilstep.codelabs.kotlin.SeaLion as SeaLion
+
+/**
+ * 1,build aquarium
+ * 2,make fish
+ */
+fun main() {
     buildAquarium();
     makeFish()
 
+    // 菜鸟教程查漏补缺知识点 https://www.runoob.com/kotlin/kotlin-interface.html
     // TODO kotlin 集合类
     // TODO kotlin 多线程
     // TODO kotlin 网络库
     // TODO kotlin 特有的一些语法特性 see ExampleUnitTest.kt
-
 
 }
 
@@ -20,6 +26,18 @@ fun makeFish() {
     shark.eat()
     println("Plecostomus: ${pleco.color}")
     pleco.eat()
+
+    println("shark is FishAction: ${shark is FishAction}")
+
+    val plecoWithArgColor = Plecostomus(object : FishColor {
+        override val color: String
+            get() = "fuck black"
+    })
+    println("plecoWithArgColor: ${plecoWithArgColor.color}")
+    plecoWithArgColor.eat()
+
+
+    
 }
 
 fun buildAquarium() {
@@ -63,7 +81,7 @@ fun buildAquarium() {
 }
 
 
-fun maxOf(a:Int,b:Int): Int {
+fun maxOf(a: Int, b: Int): Int {
     if (a > b) {
         return a
     } else {
@@ -72,16 +90,24 @@ fun maxOf(a:Int,b:Int): Int {
 }
 
 // In Kotlin, if can also be used as an expression.
-fun maxOf2(a:Int,b:Int) = if (a>b) a else b
+fun maxOf2(a: Int, b: Int) = if (a > b) a else b
+
+//fun foo() {
+//
+//}
+//
+//fun bar(foo){
+//
+//}
 
 fun describe(obj: Any): String =
-        when (obj) {
-            1          -> "One"
-            "Hello"    -> "Greeting"
-            is Long    -> "Long"
-            !is String -> "Not a string"
-            else -> "Unknown"
-        }
+    when (obj) {
+        1 -> "One"
+        "Hello" -> "Greeting"
+        is Long -> "Long"
+        !is String -> "Not a string"
+        else -> "Unknown"
+    }
 
 
 
