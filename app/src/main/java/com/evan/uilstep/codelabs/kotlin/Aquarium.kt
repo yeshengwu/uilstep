@@ -1,7 +1,10 @@
 package com.evan.uilstep.codelabs.kotlin
 
 import java.lang.Math.PI
-
+/**
+ * course overview:
+ * https://developer.android.com/codelabs/kotlin-bootcamp-welcome#1
+ */
 open class Aquarium(open var length: Int = 100, var width: Int = 20, open var height: Int = 40) {
 
     init {
@@ -48,7 +51,7 @@ open class Aquarium(open var length: Int = 100, var width: Int = 20, open var he
 }
 
 // fixme: TowerTank 写在这？是的
-// 参考： Int 所在的 Primitives.kt 中  Int Byte Long 这些类是同级关系，不写在其他兄弟内部  圆柱体水缸
+// 参考： 圆柱体水缸。  Int 所在的 Primitives.kt 中  Int Byte Long 这些类是同级关系，不写在其他兄弟内部
 class TowerTank(override var height: Int, var diameter: Int) :
     Aquarium(height = height, width = diameter, length = diameter) {
     override var volume: Int

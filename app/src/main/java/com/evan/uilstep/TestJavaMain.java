@@ -4,6 +4,7 @@ import com.evan.uilstep.codelabs.kotlin.TestKotlinClass;
 import com.evan.uilstep.codelabs.kotlin.TestKotlinObject;
 import com.evan.uilstep.playorg.BigBen;
 import com.evan.uilstep.playorg.Customer;
+import com.evan.uilstep.proj.ExtensionsKt;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,15 +23,15 @@ public class TestJavaMain {
 
         TestKotlinClass testKotlinClass = new TestKotlinClass();
         testKotlinClass.printSize();
-        testKotlinClass = new TestKotlinClass(10,10,10);
+        testKotlinClass = new TestKotlinClass(10, 10, 10);
         testKotlinClass.printSize();
         testKotlinClass = new TestKotlinClass(29);
         testKotlinClass.printSize();
 
-        Map<Integer,Integer> map = new HashMap<>();
-        map.put(100,110);
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(100, 110);
 
-        System.out.println("getLen="+map.get(testKotlinClass.getLength()));
+        System.out.println("getLen=" + map.get(testKotlinClass.getLength()));
 
 
 //        Aquarium
@@ -53,26 +54,35 @@ public class TestJavaMain {
         int sumResult = functionsA.calculate(4, 5, new FunctionsA.Operation() {
             @Override
             public int op(int x, int y) {
-                return x+y;
+                return x + y;
             }
         });
 
         int mulResult = functionsA.calculate(4, 5, new FunctionsA.Operation() {
             @Override
             public int op(int x, int y) {
-                return x*y;
+                return x * y;
             }
         });
-        System.out.println("sumResult = " + sumResult + " mulResult = "+mulResult);
+        System.out.println("sumResult = " + sumResult + " mulResult = " + mulResult);
 
         // data class
-        Customer customer = new Customer("name","email");
+        Customer customer = new Customer("name", "email");
         customer.component1();
         customer.component2();
         customer.getTestEvanField();
 
+        String sizeStr = main.testGetSizeStr(10);
+        System.out.println("sizeStr = " + sizeStr);
 
+        boolean hasSpaces = ExtensionsKt.hasSpaces("Does it have spaces?");
+        System.out.println("hasSpaces = " + hasSpaces);
 
+    }
+
+    public String testGetSizeStr(int size) {
+        System.out.println("IN testGetSizeStr");
+        return "" + size;
     }
 
     private int strJavaMapper(String str, Mapper mapper) {
