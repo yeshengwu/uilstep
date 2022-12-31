@@ -78,8 +78,20 @@ public class TestJavaMain {
         boolean hasSpaces = ExtensionsKt.hasSpaces("Does it have spaces?");
         System.out.println("hasSpaces = " + hasSpaces);
 
+        Function<String, Integer> function = new Function<String, Integer>() {
+            @Override
+            public Integer apply(String input) {
+                System.out.println("IN apply. input = " + input + " | len = " + input.length());
+                return input.length();
+            }
+        };
+        Integer clientTestFunctionResult = main.clientTestFunction(function, "i am input param value");
+        System.out.println("clientTestFunctionResult = " + clientTestFunctionResult);
     }
 
+    public <I, O> O clientTestFunction(Function<I, O> function, I input) {
+        return function.apply(input);
+    }
     public String testGetSizeStr(int size) {
         System.out.println("IN testGetSizeStr");
         return "" + size;
