@@ -43,6 +43,11 @@ open class Aquarium(open var length: Int = 100, var width: Int = 20, open var he
         println("Volume: $volume l Water: $water l (${water / volume * 100.0}% full)")
     }
 
+    operator fun invoke():String {
+        println("IN invoke, $this was invoke() and return value: evan")
+        return "evan"
+    }
+
     // fixme: TowerTank 写在这？ 如果写在这，外部调用 则为 Aquarium.TowerTank 不妥，不是内部类现在是 子类
 //     class TowerTank (override var height: Int, var diameter: Int)
 //         : Aquarium(height = height, width = diameter, length = diameter) {

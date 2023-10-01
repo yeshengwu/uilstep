@@ -1,5 +1,6 @@
 package com.evan.uilstep
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.evan.middlechild1.MainTestInChild1
+import com.evan.uilstep.proj.coroutine.KotlinCoroutine1Activity
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,11 +20,25 @@ class MainActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+
+            val intent = Intent(this@MainActivity, KotlinCoroutine1Activity.javaClass)
+            startActivity(intent)
         }
 
 //        TestKotlinObject.name
         val child1 = MainTestInChild1()
         child1.print()
+
+//        Thread(object: Runnable{
+//            override fun run() {
+//                while (true){
+//                    println("in thread run.ExoPlayerImplInAbc")
+//                    Thread.sleep(1000)
+//                }
+//            }
+//        },"ExoPlayerImplRunnableAbc").start()
+        // top as-profile 都显示截断为：ExoPlayerImpRu
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
