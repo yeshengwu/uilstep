@@ -77,6 +77,7 @@ fun buildAquarium() {
     myAquarium.printSize()
     val myTower = TowerTank(diameter = 25, height = 40)
     myTower.printSize()
+    myAquarium() // 约定 调用该类的 默认的 invoke 方法。
 
 }
 
